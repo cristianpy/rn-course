@@ -1,0 +1,29 @@
+{
+  "name": "rncourse",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios"
+  },
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.49.5"
+  },
+  "devDependencies": {
+    "babel-preset-react-native-stage-0": "^1.0.1"
+  },
+  "version": "1.0.0",
+  "main": "App.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianpy/rn-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristianpy/rn-course/issues"
+  },
+  "homepage": "https://github.com/cristianpy/rn-course#readme",
+  "description": ""
+}
