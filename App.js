@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput, View, Button, Text } from 'react-native';
 
 import PlaceList from './src/components/PlaceList/PlaceList';
+import placeImage from './src/assets/beautiful-place.jpg';
 
 export default class App extends React.Component {
   state = {
@@ -17,12 +18,15 @@ export default class App extends React.Component {
 
   placeSubmitHandler = () => {
     if (this.state.placeName.trim() === "") {
-      alert('vacio');
       return;
     }
     this.setState(prevState => {
       return {
-        places: prevState.places.concat({key: Math.random(), value: prevState.placeName})
+        places: prevState.places.concat({
+          key: Math.random(), 
+          name: prevState.placeName,
+          image: placeImage
+        })
       };
     });
   }
@@ -30,7 +34,7 @@ export default class App extends React.Component {
   // placeAddHandler = placeName => {
   //   this.setState(prevState => {
   //     return {
-  //       places: prevState.places.concat({key: Math.random(), value: prevState.placeName})
+  //       places: prevState.places.concat({key: Math.random(), value: prevState.placeName, image: PlaceImage})
   //     }
   //   });
   // }
