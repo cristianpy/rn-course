@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Button, Text } from 'react-native';
 
+import PlaceList from './src/components/PlaceList/PlaceList';
+
 export default class App extends React.Component {
   state = {
     placeName: '',
@@ -25,9 +27,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    const placesOutput = this.state.places.map((place, i) => (
-      <Text key={i}>{place}</Text>
-    ));
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
@@ -43,9 +42,7 @@ export default class App extends React.Component {
             onPress={this.placeSubmitHandler}
           />
         </View>
-        <View>
-          {placesOutput}
-        </View>
+        <PlaceList places={this.state.places}/>
       </View>
     );
   }
@@ -71,5 +68,5 @@ const styles = StyleSheet.create({
   },
   placeButton: {
     width: "30%"
-  }
+  },
 });
