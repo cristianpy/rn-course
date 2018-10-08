@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Button, Text } from 'react-native';
 
+import PlaceInput from './src/components/PlaceInput/PlaceInput';
 import PlaceList from './src/components/PlaceList/PlaceList';
-import placeImage from './src/assets/beautiful-place.jpg';
+// import placeImage from './src/assets/beautiful-place.jpg';
 
 export default class App extends React.Component {
   state = {
@@ -25,19 +26,25 @@ export default class App extends React.Component {
         places: prevState.places.concat({
           key: Math.random(), 
           name: prevState.placeName,
-          image: placeImage
+          image: {
+            uri: "https://avatars0.githubusercontent.com/u/28825133?s=400&u=f1f574ae604a8194a9f40d1291736a3a011bba64&v=4"
+          }
         })
       };
     });
   }
 
-  // placeAddHandler = placeName => {
-  //   this.setState(prevState => {
-  //     return {
-  //       places: prevState.places.concat({key: Math.random(), value: prevState.placeName, image: PlaceImage})
-  //     }
-  //   });
-  // }
+  placeAddHandler = placeName => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.concat({
+          key: Math.random(), 
+          value: prevState.placeName, 
+          image: PlaceImage
+        })
+      }
+    });
+  }
 
   placeDeletedHandler = key => {
     this.setState(prevState => {
