@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet, TextInput, View, Button, Text } from 'react-native';
+import { StyleSheet, TextInput, View, Button } from 'react-native';
 
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
 import PlaceList from './src/components/PlaceList/PlaceList';
-// import placeImage from './src/assets/beautiful-place.jpg';
+import PlaceDetail from './src/components/PlaceDetail/PlaceDetail';
 
 export default class App extends React.Component {
   state = {
     placeName: '',
-    places: []
+    places: [],
+    selectedPlace: null
   };
 
   placeNameChangedHandler = (val) => {
@@ -34,23 +35,42 @@ export default class App extends React.Component {
     });
   }
 
-  placeAddHandler = placeName => {
-    this.setState(prevState => {
-      return {
-        places: prevState.places.concat({
-          key: Math.random(), 
-          value: prevState.placeName, 
-          image: PlaceImage
-        })
-      }
-    });
-  }
+  // placeAddHandler = () => {
+  //   this.setState(prevState => {
+  //     return {
+  //       places: prevState.places.concat({
+  //         key: Math.random(), 
+  //         value: prevState.placeName, 
+  //         image: {
+  //           uri: "https://avatars0.githubusercontent.com/u/28825133?s=400&u=f1f574ae604a8194a9f40d1291736a3a011bba64&v=4"
+  //         }
+  //       })
+  //     }
+  //   });
+  // }
 
-  placeDeletedHandler = key => {
+  placeDeletedHandler = () => {
     this.setState(prevState => {
       return {
         places: prevState.places.filter(place => {
-          return place.key !== key;
+          return place.key !== prevState.selectedPlace.key;
+        }),
+        selectedPlace: null
+      }
+    })
+  }
+
+  modalClosedHandler = () => {
+    this.setState({
+      selectedPlace: null
+    });
+  }
+
+  placeSelectedHandler = key => {
+    this.setState(prevState => {
+      return {
+        selectedPlace: prevState.places.find(place => {
+          return place.key === key;
         })
       }
     });
@@ -59,6 +79,13 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+
+        <PlaceDetail 
+          selectedPlace={this.state.selectedPlace} 
+          onItemDeleted={this.placeDeletedHandler} 
+          onModalClosed={this.modalClosedHandler}
+        />
+
         <View style={styles.inputContainer}>
           <TextInput 
             placeholder="Ingrese un texto"
@@ -72,7 +99,13 @@ export default class App extends React.Component {
             onPress={this.placeSubmitHandler}
           />
         </View>
-        <PlaceList places={this.state.places} onItemDeleted={this.placeDeletedHandler}/>
+
+        {/* <PlaceInput onPlaceAdd={this.placeAddHandler}/> */}
+        
+        <PlaceList 
+          places={this.state.places} 
+          onItemSelected={this.placeSelectedHandler}
+        />
       </View>
     );
   }
