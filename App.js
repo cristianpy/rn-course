@@ -11,12 +11,12 @@ export default class App extends Component {
     selectedPlace: null
   };
 
-  placeAddHandler = () => {
+  placeAddHandler = placeName => {
     this.setState(prevState => {
       return {
         places: prevState.places.concat({
           key: Math.random(), 
-          name: prevState.placeName, 
+          name: placeName, 
           image: {
             uri: "https://avatars0.githubusercontent.com/u/28825133?s=400&u=f1f574ae604a8194a9f40d1291736a3a011bba64&v=4"
           }
