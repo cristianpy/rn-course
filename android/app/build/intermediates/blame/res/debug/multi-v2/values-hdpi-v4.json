@@ -4,16 +4,8 @@
             "outputFile": "/home/developer/curso-react-native/rn-course/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/developer/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/bdcaffadf3370eb290f6a51e191a1a76/res/values-hdpi/values-hdpi.xml",
+                    "source": "/home/developer/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/6f5c035c06bdc03e52b278284980a749/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "286",
-                        "endLines": "8",
-                        "endColumns": "13",
-                        "endOffsets": "558"
-                    },
-                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
