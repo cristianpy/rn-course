@@ -3,10 +3,11 @@ import {View, Text, Button, StyleSheet, ScrollView, Image} from 'react-native';
 import {connect} from 'react-redux';
 
 import {addPlace} from '../../store/actions/index';
-import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
+import PlaceInput from '../../components/PlaceInput/PlaceInput';
 import MainText from '../../components/UI/MainText/MainText';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
-import imagePlaceholder from '../../assets/beautiful-place.jpg';
+import PickImage from '../../components/PickImage/PickImage';
+import PickLocation from '../../components/PickLocation/PickLocation';
 
 class SharePlaceScreen extends Component {
     constructor(props) {
@@ -15,7 +16,6 @@ class SharePlaceScreen extends Component {
     }
 
     onNavigatorEvent = event => {
-        console.log(event.type)
         if (event.type === "NavBarButtonPress") {
             if (event.id === "sideDrawerToggle") {
                 this.props.navigator.toggleDrawer({
@@ -34,19 +34,9 @@ class SharePlaceScreen extends Component {
             <ScrollView>
                 <View style={styles.container}>
                     <MainText><HeadingText>Share a place with us!</HeadingText></MainText>
-                    <View style={styles.placeholder}>
-                        <Image source={imagePlaceholder} style={styles.previewImage}/>
-                    </View>
-                    <View style={styles.button}>
-                        <Button title="Pick Image"/>
-                    </View>
-                    <View style={styles.placeholder}>
-                        <Text>Map</Text>
-                    </View>
-                    <View style={styles.button}>
-                        <Button title="Locate me"/>
-                    </View>
-                    <DefaultInput placeholder="Place Name"></DefaultInput>
+                    <PickImage />
+                    <PickLocation />
+                    <PlaceInput />
                     <View style={styles.button}>
                         <Button title="Share the Place!"/>
                     </View>
