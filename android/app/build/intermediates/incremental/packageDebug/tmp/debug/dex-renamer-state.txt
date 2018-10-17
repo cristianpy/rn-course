@@ -1,4 +1,4 @@
-#Wed Oct 10 21:14:26 PYST 2018
-base.0=/home/developer/curso-react-native/rn-course/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Wed Oct 17 09:07:05 GMT-04:00 2018
+base.0=C\:\\Users\\Developer\\git\\rn-course\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

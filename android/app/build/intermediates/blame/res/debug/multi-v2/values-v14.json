@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/developer/curso-react-native/rn-course/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
+            "outputFile": "C:\\Users\\Developer\\git\\rn-course\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "/home/developer/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/6f5c035c06bdc03e52b278284980a749/res/values-v14/values-v14.xml",
+                    "source": "C:\\Users\\Developer\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\8d22e52c0eab223d4b51e737336c3f9b\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15,21,22,23,24,25,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
